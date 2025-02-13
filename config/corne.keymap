@@ -5,7 +5,7 @@
 /* Custom Defined Behaviors */
 / {
     behaviors {
-      lh_pht: home_row_left_mod_tap {
+      hml: home_row_left_mod_tap {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "tap-preferred";
@@ -15,7 +15,7 @@
         hold-trigger-key-positions = <6 7 8 9 10 11>;
       };
 
-      rh_pht: home_row_right_mod_tap {
+      hmr: home_row_right_mod_tap {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "tap-preferred";
@@ -39,7 +39,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
             bindings = <
                 &kp TAB    &kp Q  &kp D    &kp R    &kp W  &kp B    &kp J    &kp F      &kp U      &kp P    &kp SEMI  &kp BSPC
-                &kp ESC    &kp A  &kp S    &kp H    &kp T  &kp G    &kp Z    &kp N      &kp E      &kp O    &kp I     &kp SQT
+                &kp ESC    &hml LALT A  &hml LGUI S    &hml LSHFT H    &hml LCTRL T  &kp G    &kp Z    &hmr RCTRL N      &hmr RSHFT E      &hmr RGUI O    &hmr LALT I     &kp SQT
                 &kp LSHFT  &kp Y  &kp X    &kp M    &kp C  &kp V    &kp K    &kp L      &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                                            &kp DEL  &mo 1  &kp TAB  &kp RET  &kp SPACE  &kp BSPC                                                        
             >;

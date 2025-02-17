@@ -29,27 +29,27 @@
 
         default_layer {
             bindings = <
-                &trans    &kp Q  &kp D    &kp R    &kp W  &kp B    &kp J    &kp F      &kp U      &kp P    &kp DE_PLUS  &trans
-                &kp ESC    &th LALT A  &th LGUI S    &th LCTRL H    &th LCTRL T  &th LGUI G    &th LGUI DE_Y    &th LCTRL N      &th LCTRL E      &th LGUI O    &th LALT I     &kp DE_POUND
-                &kp DEL  &kp DE_Z  &kp X    &kp M    &kp C  &kp V    &kp K    &kp L      &kp COMMA  &kp DOT  &kp DE_MINUS  &kp BSPC
-                                           &kp LCTRL  &kp LSHFT  &th LGUI TAB  &thm 1 RET  &kp SPACE  &mo 2                                                        
+                &kp LALT  &kp Q     &kp D  &kp R     &kp W      &kp B           &kp J       &kp F      &kp U      &kp P    &kp DE_PLUS   &kp RALT
+                &kp ESC   &kp A     &kp S  &kp H     &kp T      &kp G           &kp DE_Y    &kp N      &kp E      &kp O    &kp I         &kp DE_POUND
+                &kp DEL   &kp DE_Z  &kp X  &kp M     &kp C      &kp V           &kp K       &kp L      &kp COMMA  &kp DOT  &kp DE_MINUS  &kp BSPC
+                                           &kp LCTRL &kp LSHFT  &th LGUI TAB    &thm 1 RET  &kp SPACE  &mo 2                                                        
             >;
         };
         lower_layer {
             bindings = <
-                &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
-                &bt BT_CLR_ALL  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                &trans &trans &trans &trans &trans &trans
+                &kp TAB         &kp N1        &kp N2        &kp N3        &kp N4        &kp N5       &kp N6  &kp N7    &kp N8    &kp N9   &kp N0     &kp BSPC              
+                &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 &trans  &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &trans 
+                &bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans       &trans  &trans    &trans    &trans   &trans     &trans 
+                                                            &trans        &trans        &trans       &trans  &trans    &trans 
             >;
         };
 
         raise_layer {
             bindings = <
-                &trans  &kp DE_AT_SIGN   &kp DE_DOUBLE_QUOTES  &kp DE_TILDE     &kp DE_CARET    &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_DOLLAR     &kp DE_U_UMLAUT  &kp DE_BACKSLASH  &trans        &trans    
-                &trans  &kp DE_A_UMLAUT  &kp DE_SHARP_S        &kp DE_EQUAL     &kp DE_LPAR     &kp DE_LBRC       &kp DE_RBRC         &kp DE_RPAR       &kp DE_SLASH     &kp DE_O_UMLAUT   &kp DE_COLON  &trans
-                &trans  &kp DE_GRAVE     &kp DE_SINGLE_QUOTE   &kp DE_ASTERISK  &kp DE_PERCENT  &kp DE_LBKT       &kp DE_RBKT         &kp DE_AMPERSAND  &kp DE_EXCL      &kp DE_PIPE       &kp DE_QUESTION        &trans    
-                &trans &trans &trans &trans &trans &trans
+                &trans  &kp DE_AT_SIGN   &kp DE_DOUBLE_QUOTES  &kp DE_TILDE     &kp DE_CARET    &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_DOLLAR     &kp DE_U_UMLAUT  &kp DE_BACKSLASH  &trans           &trans 
+                &trans  &kp DE_A_UMLAUT  &kp DE_SHARP_S        &kp DE_EQUAL     &kp DE_LPAR     &kp DE_LBRC       &kp DE_RBRC          &kp DE_RPAR       &kp DE_SLASH     &kp DE_O_UMLAUT   &kp DE_COLON     &trans 
+                &trans  &kp DE_GRAVE     &kp DE_SINGLE_QUOTE   &kp DE_ASTERISK  &kp DE_PERCENT  &kp DE_LBKT       &kp DE_RBKT          &kp DE_AMPERSAND  &kp DE_EXCL      &kp DE_PIPE       &kp DE_QUESTION  &trans 
+                                                               &trans           &trans          &trans            &trans               &trans            &trans 
             >;
         };
     };

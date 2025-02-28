@@ -20,6 +20,19 @@
         tapping-term-ms = <300>;
         bindings = <&mo>, <&kp>;
       };
+      th_repeat: tap_hold_repeat {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <300>;
+        bindings = <&kp>, <&key_repeat>;
+      };
+      td0: tap_dance_0 {
+          compatible = "zmk,behavior-tap-dance";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&th_repeat LGUI 0>, <&kp TAB>;
+      };
     };
 };
 
@@ -29,10 +42,10 @@
 
         default_layer {
             bindings = <
-                &kp TAB   &kp Q       &kp D       &kp R        &kp W        &kp B           &kp J       &kp F        &kp U        &kp P       &kp DE_PLUS   &trans
-                &kp ESC   &th LALT A  &th LGUI S  &th LSHFT H  &th LCTRL T  &kp G           &kp DE_Y    &th RCTRL N  &th RSHFT E  &th RGUI O  &th RALT I    &kp DE_POUND
-                &kp DEL   &kp DE_Z    &kp X       &kp M        &kp C        &kp V           &kp K       &kp L        &kp COMMA    &kp DOT     &kp DE_MINUS  &kp BSPC
-                                                  &kp LCTRL    &kp LSHFT    &key_repeat    &thm 1 RET  &kp SPACE    &mo 2                                                        
+                &kp TAB   &kp Q       &kp D       &th LSHFT R  &kp W        &kp B          &kp J       &kp F        &th RSHFT U  &kp P       &kp DE_PLUS   &trans
+                &kp ESC   &th LALT A  &th LGUI S  &thm 2 H     &th LCTRL T  &kp G          &kp DE_Y    &th RCTRL N  &thm 2 E     &th RGUI O  &th RALT I    &kp DE_POUND
+                &kp DEL   &kp DE_Z    &kp X       &kp M        &kp C        &kp V          &kp K       &kp L        &kp COMMA    &kp DOT     &kp DE_MINUS  &kp BSPC
+                                                  &kp LCTRL    &kp LSHFT    &td0           &thm 1 RET  &kp SPACE    &mo 2                                                        
             >;
         };
         lower_layer {

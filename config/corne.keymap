@@ -3,40 +3,43 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keys_de.h"
 
-/* Custom Defined Behaviors */
 / {
     behaviors {
-      th: tap_hold {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <300>;
-        bindings = <&kp>, <&kp>;
-      };
-      thm: tap_hold_layer_move {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <300>;
-        bindings = <&mo>, <&kp>;
-      };
-      th_repeat: tap_hold_repeat {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <300>;
-        bindings = <&kp>, <&key_repeat>;
-      };
-      td0: tap_dance_0 {
-          compatible = "zmk,behavior-tap-dance";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&th_repeat LGUI 0>, <&kp TAB>;
-      };
+        th: tap_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            bindings = <&kp>, <&kp>;
+        };
+        thm: tap_hold_layer_move {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            bindings = <&mo>, <&kp>;
+        };
+        th_repeat: tap_hold_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            bindings = <&kp>, <&key_repeat>;
+        };
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&th_repeat LGUI 0>, <&kp TAB>;
+        };
     };
-};
-
-/ {
+    macros {
+        caret: caret {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp DE_CARET &kp DE_CARET>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
@@ -59,7 +62,7 @@
 
         symbol_layer {
             bindings = <
-                &trans  &kp DE_AT_SIGN   &kp DE_DOUBLE_QUOTES  &kp DE_TILDE     &kp DE_CARET    &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_DOLLAR     &kp DE_U_UMLAUT  &kp DE_BACKSLASH  &trans           &trans 
+                &trans  &kp DE_AT_SIGN   &kp DE_DOUBLE_QUOTES  &kp DE_TILDE     &caret          &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_DOLLAR     &kp DE_U_UMLAUT  &kp DE_BACKSLASH  &trans           &trans 
                 &trans  &kp DE_A_UMLAUT  &kp DE_SHARP_S        &kp DE_EQUAL     &kp DE_LPAR     &kp DE_LBRC       &kp DE_RBRC          &kp DE_RPAR       &kp DE_SLASH     &kp DE_O_UMLAUT   &kp DE_COLON     &trans 
                 &trans  &kp DE_GRAVE     &kp DE_SINGLE_QUOTE   &kp DE_ASTERISK  &kp DE_PERCENT  &kp DE_LBKT       &kp DE_RBKT          &kp DE_AMPERSAND  &kp DE_EXCL      &kp DE_PIPE       &kp DE_QUESTION  &trans 
                                                                &trans           &trans          &trans            &trans               &trans            &trans 
